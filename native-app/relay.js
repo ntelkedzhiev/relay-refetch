@@ -26,18 +26,10 @@ const networkMiddlewares = [
     url: req => Promise.resolve("http://localhost:3002/graphql")
   }),
   loggerMiddleware({
-    logger: (message, ...data) =>
-      global.__DEV__
-        ? console.log(message)
-        : firebase.crashlytics().log(`${message}, with data: ${data}`)
+    logger: (message, ...data) => console.log(message)
   }),
   errorMiddleware({
-    logger: (message, ...data) =>
-      global.__DEV__
-        ? console.error(message, data)
-        : firebase
-            .crashlytics()
-            .recordError(2, `${message}, with data: ${data}`)
+    logger: (message, ...data) => console.error(message, data)
   }),
   // global.__DEV__ ? perfMiddleware() : null,
   retryMiddleware({
@@ -96,9 +88,7 @@ export function withRelay(WrappedComponent, Query) {
             //  this.props.navigation.dispatch(resetNavigationStack);
 
             if (error) {
-              firebase
-                .crashlytics()
-                .recordError(1, `QueryRenderer error: ${error}`);
+              console.error(error);
             }
 
             // if (!props) {
