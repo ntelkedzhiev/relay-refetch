@@ -1,0 +1,26 @@
+{
+  "name": "empty-project-template",
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "dependencies": {
+    "babel-plugin-relay": "1.7.0-rc.1",
+    "expo": "^30.0.1",
+    "prop-types": "15.6.2",
+    "react": "16.3.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+    "react-relay": "1.7.0-rc.1",
+    "react-relay-network-modern": "2.4.0",
+    "relay-runtime": "1.7.0-rc.1"
+  },
+  "devDependencies": {
+    "graphql": "14.0.2",
+    "relay-compiler": "1.7.0-rc.1"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "eject": "expo eject",
+    "relay": "relay-compiler --src ./ --schema ../server/src/schema/schema.graphql"
+  }
+}

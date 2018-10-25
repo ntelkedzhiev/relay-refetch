@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Nikola Telkedzhiev",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/plugin-transform-runtime": "7.1.0",
+    "@babel/preset-env": "7.1.0",
+    "express": "4.16.4",
+    "express-graphql": "0.6.12",
+    "graphql": "14.0.2",
+    "graphql-relay": "0.5.5",
+    "relay-runtime": "1.7.0-rc.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.1.2",
+    "@babel/core": "7.1.2",
+    "@babel/node": "7.0.0"
+  },
+  "scripts": {
+    "start": "babel-node src/index.js",
+    "relay": "babel-node src/schema/updateSchema"
+  }
+}

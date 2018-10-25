@@ -1,0 +1,23 @@
+"""An object with an ID"""
+interface Node {
+  """The id of the object."""
+  id: ID!
+}
+
+type Query {
+  fromCache: Boolean
+
+  """Fetches an object given its ID"""
+  node(
+    """The ID of an object"""
+    id: ID!
+  ): Node
+  viewer: User
+  relay: Query!
+}
+
+type User implements Node {
+  """The ID of an object"""
+  id: ID!
+  value: Int
+}
