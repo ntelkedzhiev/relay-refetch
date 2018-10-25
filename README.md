@@ -1,5 +1,3 @@
-An example related to issue described here https://github.com/facebook/relay/issues/2553
-
 ## To run:
 
 Replace `localhost` with your IP in native-app/relay.js
